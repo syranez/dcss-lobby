@@ -21,14 +21,6 @@ class Progress {
             case 'idle_time':
                 break;
             case 'spectator_count':
-                if (change.oldValue === 0) {
-                    changes.push(`wird nun beobachtet`);
-                } else if (change.newValue === 0) {
-                    changes.push(`wird nicht mehr beobachtet`);
-                } else {
-                    changes.push(`wird von ${change.newValue} Leuten beobachtet`);
-                }
-
                 break;
             default:
                 console.warn('Unhandled: ' + change.key);
