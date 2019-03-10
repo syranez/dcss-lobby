@@ -7,7 +7,9 @@ class Progress {
         event.diff.forEach(change => {
             switch (change.key) {
             case 'place':
-                changes.push(`ist von ${change.oldValue} nach ${change.newValue} gegangen`);
+                if (event.switchedBranch()) {
+                    changes.push(`ist von ${change.oldValue} nach ${change.newValue} gegangen`);
+                }
                 break;
             case 'milestone':
                 changes.push(`hat einen Meilenstein geschafft: "${change.newValue}"`);

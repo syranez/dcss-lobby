@@ -1,3 +1,8 @@
+# 1.2.0
+
+Example: No messages for place changes *in* branches.
+Event/Update: added functionality to detect branch changes.
+
 # 1.1.0
 
 Example: Start event formatter creates now watch url.
