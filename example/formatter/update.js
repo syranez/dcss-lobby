@@ -32,7 +32,7 @@ class Progress {
         }
 
 
-        return `[${event.server}] ${event.username} ${changes.join(' und ')}.`;
+        return `[${event.serverInfo.shortcut}] ${event.username} ${changes.join(' und ')}.`;
     }
 }
 

@@ -2,7 +2,7 @@ const Lobby     = require('../index.js');
 const Formatter = require('./formatter.js');
 const Users     = require('./filter/users.js');
 
-const lobby = new Lobby.Lobby('CUE', 'wss://underhound.eu:8080/socket', {
+const lobby = new Lobby.Lobby('CUE', 'https://underhound.eu:8080/', {
     reconnect:      true,
     bulkProcessing: 3,
 });

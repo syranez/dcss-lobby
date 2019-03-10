@@ -4,19 +4,19 @@ const MessageStore  = require('./message/store.js');
 const MessageBulk   = require('./message/bulk.js');
 const Translator    = require('./translator.js');
 const EventEmitter  = require('./emitter.js');
+const ServerInfo    = require('./serverinfo.js');
 
 class Lobby {
 
     constructor(/* String */ shortcut, /* string */ uri, /* object */ configuration = {}) {
 
-        this.shortcut = shortcut;
-        this.uri = uri;
+        this.serverInfo = new ServerInfo(shortcut, uri);
 
         this.messageParser = new MessageParser();
         this.messageStore  = new MessageStore();
         this.messageBulk   = new MessageBulk(5);
         this.emitter       = new EventEmitter();
-        this.translator    = new Translator(this.shortcut, this.emitter, this.messageStore);
+        this.translator    = new Translator(this.serverInfo, this.emitter, this.messageStore);
 
         this.evalConfiguration(configuration);
     }
@@ -61,7 +61,7 @@ class Lobby {
     connect() {
 
         const client = new Client();
-        client.connect(this.uri, 'no-compression').then(connection => {
+        client.connect(this.serverInfo.getWebSocketUrl(), 'no-compression').then(connection => {
 
             connection.on('error', error => {
 

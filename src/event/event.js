@@ -1,14 +1,9 @@
 class Event {
 
-    constructor(/* String */ serverShortcut, /* JSON */ message) {
+    constructor(/* ServerInfo */ serverInfo, /* JSON */ message) {
 
-        this.serverShortcut = serverShortcut;
-        this.message        = message;
-    }
-
-    get server() {
-
-        return this.serverShortcut;
+        this.serverInfo = serverInfo;
+        this.message    = message;
     }
 
 }

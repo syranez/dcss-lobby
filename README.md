@@ -15,7 +15,7 @@ dcss-lobby connects to a [DCSS] WebTiles server and gives you all game events - 
 ```js
 const Lobby = require('dcss-lobby');
 
-const lobby = new Lobby.Lobby('CUE', 'wss://underhound.eu:8080/socket', {
+const lobby = new Lobby.Lobby('CUE', 'https://underhound.eu:8080/', {
     reconnect:      true,
     bulkProcessing: 3,
 });
@@ -72,7 +72,7 @@ Available game event types:
 **Lobby** is the main interaction object. It handles all the above mentioned things. A lobby needs the shortcut for a DCSS WebTiles server and the servers WebSocket URL and can have an optionally configuration object:
 
 ```js
-const lobby = new Lobby(/* server shortcut */ 'CUE', /* websocket url */ 'wss://underhound.eu:8080/socket', {
+const lobby = new Lobby(/* server shortcut */ 'CUE', /* server url */ 'https://underhound.eu:8080/', {
     reconnect: boolean // do reconnect after disconnect
     bulkProcessing: number // number of max messages in MessageBulk
 });

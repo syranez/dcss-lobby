@@ -4,7 +4,7 @@ class Start {
 
         const parts = [];
 
-        parts.push(`[${event.server}]`);
+        parts.push(`[${event.serverInfo.shortcut}]`);
         parts.push(`${event.username} ist`);
         parts.push(`im Dungeon ${event.game_id}`);
 
@@ -17,6 +17,8 @@ class Start {
         }
 
         parts.push(`auf der Suche nach dem Orb.`);
+
+        parts.push(`(Watch: ${event.serverInfo.getWatchUrlForUser(event.username)})`);
 
         return parts.join(' ');
     }

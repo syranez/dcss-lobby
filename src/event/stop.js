@@ -4,9 +4,9 @@ class Stop
 extends Event
 {
 
-    constructor(/* String */ serverShortcut, /* LobbyEntry */ lastEntry, /* LobbyRemove */ message) {
+    constructor(/* ServerInfo */ serverInfo, /* LobbyEntry */ lastEntry, /* LobbyRemove */ message) {
 
-        super(serverShortcut, message);
+        super(serverInfo, message);
 
         this.lastEntry = lastEntry;
     }

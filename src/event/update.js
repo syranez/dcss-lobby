@@ -4,13 +4,13 @@ class Update
 extends Event
 {
 
-    constructor(/* String */ serverShortcut, /* LobbyEntry */ oldMessage, /* LobbyEntry */ newMessage) {
+    constructor(/* ServerInfo */ serverInfo, /* LobbyEntry */ oldMessage, /* LobbyEntry */ newMessage) {
 
         if (oldMessage.constructor.name !== newMessage.constructor.name) {
             throw new 'The messages have not the same type: ' + oldMessage.constructor.name + ' <=> ' + newMessage.constructor.name;
         }
 
-        super(serverShortcut, {
+        super(serverInfo, {
             username: oldMessage.username,
             game_id: oldMessage.game_id,
             id: oldMessage.id,
