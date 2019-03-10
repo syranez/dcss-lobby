@@ -1,6 +1,6 @@
 {
   "name": "dcss-lobby",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Connects to a DCSS WebTiles server and gives you all game events - the same which are shown in the lobby.",
   "keywords": ["dcss"],
   "main": "index.js",
