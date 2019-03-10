@@ -22,14 +22,22 @@ class Emitter {
         this.formatter.set(type, formatter);
     }
 
-    setSink(/* Sink */ sink) {
+    addSink(/* Sink */ sink) {
 
-        this.sinks.set('all', sink);
+        if (this.sinks.has('all') === false) {
+            this.sinks.set('all', []);
+        }
+
+        this.sinks.get('all').push(sink);
     }
 
-    setSinkForType(/* String */ type, /* Sink */ sink) {
+    addSinkForType(/* String */ type, /* Sink */ sink) {
 
-        this.sinks.set(type, sink);
+        if (this.sinks.has(type) === false) {
+            this.sinks.set(type, []);
+        }
+
+        this.sinks.get(type).push(sink);
     }
 
     emit(/* String */ type, /* Event */ event) {
@@ -57,11 +65,15 @@ class Emitter {
         }
 
         if (this.sinks.has('all')) {
-            this.sinks.get('all').consume(output);
+            this.sinks.get('all').forEach(sink => {
+                sink.consume(output);
+            });
         }
 
         if (this.sinks.has(type)) {
-            this.sinks.get(type).consume(output);
+            this.sinks.get(type).forEach(sink => {
+                sink.consume(output);
+            });
         }
     }
 

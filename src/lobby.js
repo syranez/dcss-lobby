@@ -48,14 +48,14 @@ class Lobby {
         this.emitter.setFilterForType(type, filter);
     }
 
-    setSink(/* Sink */ sink) {
+    addSink(/* Sink */ sink) {
 
-        this.emitter.setSink(sink);
+        this.emitter.addSink(sink);
     }
 
-    setSinkForType(/* String */ type, /* Sink */ sink) {
+    addSinkForType(/* String */ type, /* Sink */ sink) {
 
-        this.emitter.setSinkForType(type, sink);
+        this.emitter.addSinkForType(type, sink);
     }
 
     connect() {

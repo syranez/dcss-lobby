@@ -13,6 +13,6 @@ lobby.setFormatter('stop', new Formatter.Stop());
 lobby.setFormatter('start', new Formatter.Start());
 lobby.setFormatter('update', new Formatter.Update());
 
-lobby.setSink(new Lobby.Sink.Console());
+lobby.addSink(new Lobby.Sink.Console());
 
 lobby.connect();
