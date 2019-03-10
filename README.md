@@ -13,7 +13,7 @@ dcss-lobby connects to a [DCSS] WebTiles server and gives you all game events - 
 # Usage
 
 ```js
-const Lobby = require('dcss-loby');
+const Lobby = require('dcss-lobby');
 
 const lobby = new Lobby.Lobby('CUE', 'wss://underhound.eu:8080/socket', {
     reconnect:      true,
