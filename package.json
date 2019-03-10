@@ -1,0 +1,15 @@
+{
+  "name": "dcss-lobby",
+  "version": "1.0.0",
+  "description": "Connects to a DCSS WebTiles server and gives you all game events - the same which are shown in the lobby.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Nowack <github@minaga-church.de> (https://github.com/syranez)",
+  "license": "MIT",
+  "dependencies": {
+    "lodash.isequal": "^4.5.0",
+    "websocket": "^1.0.28"
+  }
+}
