@@ -5,7 +5,7 @@ class Stop {
         const parts = [];
 
         parts.push(`[${event.server}]`);
-        parts.push(`${event.username} `);
+        parts.push(`${event.username}`);
         parts.push(`im Dungeon ${event.game_id}`);
 
         if (event.char) {
