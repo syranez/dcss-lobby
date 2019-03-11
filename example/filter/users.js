@@ -7,8 +7,8 @@ class Users {
         }
 
         const interestedUsernames = [
-            'MirrMurr',
-            'Zigma',
+            'syranez',
+            'Plasmo',
         ];
 
         return !interestedUsernames.includes(event.username);
