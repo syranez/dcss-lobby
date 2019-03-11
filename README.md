@@ -63,12 +63,6 @@ npm install dcss-lobby
 
 **Client** wraps the WebSocket connection. The WebSocket connection transmits messages. The **MessageParser** parses the messages and creates **Message**-Objects. These objects are stored in a **MessageStore**. The **MessageBulk** tries to summarize messages to reduce spam. After the **MessageBulk** got max messages, the messages are given to **Translator**, which converts the messages to game **Event** objects and puts them on the **Emitter**. The **Emitter** filters and formats events and puts them in a sink e. g. console.
 
-Available game event types:
-
-  - start (src/event/start.js)
-  - update (src/event/update.js)
-  - stop (src/event/stop.js)
-
 **Lobby** is the main interaction object. It handles all the above mentioned things. A lobby needs the shortcut for a DCSS WebTiles server and the servers WebSocket URL and can have an optionally configuration object:
 
 ```js
@@ -136,6 +130,66 @@ lobby.setSink(new Lobby.Sink.Console());
 // for (formatted) event types
 lobby.setSinkForType('update', new Lobby.Sink.Console());
 ```
+
+## Game Event Types
+
+### start
+
+Emitted if someone starts are continues a game.
+
+key | meaning
+----|--------
+username | Name of player
+xl | Experience Level
+title | Current title
+spectator_count | Count of spectators
+idle_time | Idle time
+char | Character
+place | Current location
+game_id | Game version
+id | Process id of current game
+
+Source: *src/event/start.js*
+
+### update
+
+Emitted if something interesting happend in someones game.
+
+key | meaning
+----|--------
+username | Name of player
+game_id | Game version
+id | Process id of current game
+diff | Array with all changes
+switchedBranch() | Returns *true* if player switched the dungeon branch, otherwise *false*
+
+diff is an array with all changes where change is an object with this
+
+key | meaning
+----|--------
+key | Name of changed value (can be: xl, title, spectator_count, idle_time, char, place)
+oldValue | Value before
+newValue | current value
+
+Source: *src/event/update.js*
+
+### stop
+
+Emitted if the game is stopped.
+
+key | meaning
+----|--------
+username | Name of player
+xl | Experience Level
+title | Current title
+spectator_count | Count of spectators
+idle_time | Idle time
+char | Character
+place | Current location
+game_id | Game version
+id | Process id of current game
+
+Source: *src/event/stop.js*
 
 # License
 
