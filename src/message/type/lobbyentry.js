@@ -40,6 +40,10 @@ extends Type
         return this.message.id;
     }
 
+    get milestone() {
+        return this.message.milestone;
+    }
+
     shouldMerge(/* Type */ type) {
 
         return this.username === type.username
