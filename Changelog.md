@@ -1,5 +1,8 @@
 # 1.2.0
 
+* Example: use my name.
+* Documentation: game events documented.
+* Example: show only milestones.
 * Example: No messages for place changes *in* branches.
 * Event/Update: added functionality to detect branch changes.
 
