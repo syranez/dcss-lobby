@@ -135,7 +135,7 @@ lobby.setSinkForType('update', new Lobby.Sink.Console());
 
 ### start
 
-Emitted if someone starts are continues a game.
+Emitted if someone starts or continues a game.
 
 key | meaning
 ----|--------
