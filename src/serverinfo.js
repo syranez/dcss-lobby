@@ -8,7 +8,13 @@ class ServerInfo {
 
     getWebSocketUrl() {
 
-        return 'wss://' + this.url.host + '/socket';
+        let protocol = 'ws:';
+
+        if (this.url.protocol === 'https:') {
+            protocol = 'wss:'
+        }
+
+        return protocol + '//' + this.url.host + '/socket';
     }
 
     getWatchUrlForUser(/* String */ user) {

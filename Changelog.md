@@ -1,3 +1,7 @@
+# 1.2.1
+
+* On plain http servers use ws-Protocol.
+
 # 1.2.0
 
 * Example: use my name.
