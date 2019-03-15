@@ -70,12 +70,12 @@ class Lobby {
 
             connection.on('close', () => {
 
+                console.info('WebSocket connection closed.');
+
                 if (this.reconnect) {
-                    console.log('Reconnect');
+                    console.info('Reconnect WebSocket connection...');
                     this.connect();
                 }
-
-                console.log('echo-protocol Connection Closed');
             });
 
             connection.on('message', message => {
