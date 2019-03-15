@@ -1,3 +1,6 @@
+# 1.2.2
+
+Example: Formatter for update game event handles more game data.
 # 1.2.1
 
 * On plain http servers use ws-Protocol.
