@@ -8,6 +8,10 @@ extends Type
         return this.message.id;
     }
 
+    shouldFlush(/* Type */ type) {
+
+        return true;
+    }
 }
 
 module.exports = LobbyRemove;

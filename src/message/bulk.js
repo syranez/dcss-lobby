@@ -4,7 +4,9 @@ class Bulk {
 
         this.setMax(maxCount);
 
-        this.bulk = [];
+        this.bulk    = [];
+        this.counter = 0;
+        this.flush   = false;
     }
 
     setMax(/* number */ maxCount) {
@@ -18,17 +20,28 @@ class Bulk {
             return;
         }
 
+        this.counter += 1;
+
         if (this.shouldMerge(message)) {
             this.merge(message);
             return;
         }
 
+        if (message.shouldFlush()) {
+            this.flush = true;
+        }
+
         this.bulk.push(message);
+    }
+
+    shouldFetch() {
+
+        return this.hasMaxReached() || this.flush;
     }
 
     hasMaxReached() {
 
-        return this.bulk.length >= this.maxCount;
+        return this.counter >= this.maxCount;
     }
 
     has(/* Message */ message) {
@@ -59,14 +72,16 @@ class Bulk {
         this.bulk[index] = message;
     }
 
-    get() {
+    fetch() {
 
         return this.bulk;
     }
 
     reset() {
 
-        this.bulk = [];
+        this.bulk    = [];
+        this.counter = 0;
+        this.flush   = false;
     }
 
 }

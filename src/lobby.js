@@ -86,8 +86,8 @@ class Lobby {
                     this.messageBulk.add(message);
                 });
 
-                if (this.messageBulk.hasMaxReached()) {
-                    this.translator.handle(this.messageBulk.get());
+                if (this.messageBulk.shouldFetch()) {
+                    this.translator.handle(this.messageBulk.fetch());
                     this.messageBulk.reset();
                 }
             });

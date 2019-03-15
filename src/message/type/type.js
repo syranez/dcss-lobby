@@ -17,6 +17,11 @@ class Type {
         return false;
     }
 
+    shouldFlush(/* Type */ type) {
+
+        return false;
+    }
+
 }
 
 module.exports = Type;
