@@ -1,6 +1,9 @@
-# 1.2.2
+# 1.3.0
 
-Example: Formatter for update game event handles more game data.
+* Example: Formatter for update game event handles more game data.
+* Bulk: The threshold handling works now correct. The threshold counts the incominge messages and flushes the bulk if the count of messages consumed are greater or equal the threshold.
+* Bulk: LobbyRemove-Message flushes the bulk. Stopped games are immediately announced.
+
 # 1.2.1
 
 * On plain http servers use ws-Protocol.
