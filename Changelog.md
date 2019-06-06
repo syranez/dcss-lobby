@@ -1,3 +1,7 @@
+# 1.3.2
+
+* npm fixup
+
 # 1.3.1
 
 * Upgrade mocha, addressing code injection vulnerability in mocha dependency.
