@@ -1,6 +1,6 @@
 # dcss-lobby
 
-dcss-lobby connects to a [DCSS] WebTiles server and gives you all game events - the same which are shown in the lobby.
+dcss-lobby connects to a [Dungeon Crawl Stone Soup] WebTiles server and gives you all game events - the same which are shown in the lobby.
 
 # Features
 
@@ -63,7 +63,7 @@ npm install dcss-lobby
 
 **Client** wraps the WebSocket connection. The WebSocket connection transmits messages. The **MessageParser** parses the messages and creates **Message**-Objects. These objects are stored in a **MessageStore**. The **MessageBulk** tries to summarize messages to reduce spam. After the **MessageBulk** got max messages, the messages are given to **Translator**, which converts the messages to game **Event** objects and puts them on the **Emitter**. The **Emitter** filters and formats events and puts them in a sink e. g. console.
 
-**Lobby** is the main interaction object. It handles all the above mentioned things. A lobby needs the shortcut for a DCSS WebTiles server and the servers WebSocket URL and can have an optionally configuration object:
+**Lobby** is the main interaction object. It handles all the above mentioned things. A lobby needs the shortcut for a Dungeon Crawl Stone Soup WebTiles server and the servers WebSocket URL and can have an optionally configuration object:
 
 ```js
 const lobby = new Lobby(/* server shortcut */ 'CUE', /* server url */ 'https://underhound.eu:8080/', {
@@ -197,4 +197,4 @@ MIT
 
 [//]:
 
-  [DCSS]: <https://crawl.develz.org>
+  [Dungeon Crawl Stone Soup]: <https://crawl.develz.org>
