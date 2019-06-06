@@ -1,3 +1,7 @@
+# 1.3.1
+
+* Upgrade mocha, addressing code injection vulnerability in mocha dependency.
+
 # 1.3.0
 
 * Example: Formatter for update game event handles more game data.
