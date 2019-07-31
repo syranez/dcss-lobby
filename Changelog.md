@@ -1,3 +1,7 @@
+# Unreleasd
+
+* Upgrade mocha, addressing CVE-2019-10744
+
 # 1.3.2
 
 * npm fixup
