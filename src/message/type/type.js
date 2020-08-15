@@ -1,4 +1,4 @@
-const isEqual = require('lodash.isequal');
+const lodash = require('lodash');
 
 class Type {
 
@@ -9,7 +9,7 @@ class Type {
 
     isEqual(/* Type */ type) {
 
-        return isEqual(this.message, type.message);
+        return lodash.isEqual(this.message, type.message);
     }
 
     shouldMerge(/* Type */ type) {
